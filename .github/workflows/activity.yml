@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether to run
-      - run: |
+        run: |
           if [ $((RANDOM % 2)) -eq 0 ]; then
             echo "Skip today"
             exit 0
           fi
-      - run: sleep $(( RANDOM % 1800 ))
+          sleep $(( RANDOM % 1800 ))
 
       - uses: actions/checkout@v2
 
       - name: Do the work
-      - run: |
+        run: |
           date >> update-log.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
