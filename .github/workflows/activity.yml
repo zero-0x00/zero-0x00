@@ -13,13 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether to run
-        run: |
+      - run: |
           if [ $((RANDOM % 2)) -eq 0 ]; then
             echo "Skip today"
             exit 0
           fi
-
-      - name: Random delay
       - run: sleep $(( RANDOM % 1800 ))
 
       - uses: actions/checkout@v2
