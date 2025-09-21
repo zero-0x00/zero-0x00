@@ -20,7 +20,8 @@ jobs:
           fi
           sleep $(( RANDOM % 1800 ))
 
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
       - name: Do the work
         run: |
